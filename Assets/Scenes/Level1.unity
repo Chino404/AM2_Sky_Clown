@@ -11146,8 +11146,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1075964846}
   - component: {fileID: 1075964845}
+  - component: {fileID: 1075964847}
   m_Layer: 0
-  m_Name: SavData
+  m_Name: SaveManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11183,6 +11184,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1075964847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075964844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405fe3c7b677c094188247cc12f237fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveData:
+    energy: 0
+    life: 0
+    playersNames: []
 --- !u!1 &1076301006
 GameObject:
   m_ObjectHideFlags: 0

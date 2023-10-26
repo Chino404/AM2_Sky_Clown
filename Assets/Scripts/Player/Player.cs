@@ -48,10 +48,13 @@ public class Player : MonoBehaviour, IObservableImpulse
             PlayerPrefs.SetString("PlayerName", _playerName);
             PlayerPrefs.Save();
         }
+
     }
 
     private void Start()
     {
+        //SetPlayerStats();
+
         animator = GetComponent<Animator>();
 
         SavePlayerPrefs.instance.SaveVariables(_energy, _playerName);
@@ -162,6 +165,12 @@ public class Player : MonoBehaviour, IObservableImpulse
     {
         if(_impulse.Contains(obs))
             _impulse.Remove(obs);
+    }
+
+    public void SetPlayerStats()
+    {
+        if (!CallJson.instance.save) return;
+        _energy = CallJson.instance.save.GetSaveData.energy;
     }
 
     #region App
