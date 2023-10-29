@@ -47,7 +47,7 @@ public class JsonSaves : MonoBehaviour
 
     public void LoadJSON()
     {
-        if (File.Exists(path))
+        if (!File.Exists(path))
         {
             Debug.LogWarning($"No hay archivo para cargar");
             return;

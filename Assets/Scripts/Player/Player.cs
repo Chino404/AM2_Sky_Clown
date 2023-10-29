@@ -53,7 +53,7 @@ public class Player : MonoBehaviour, IObservableImpulse
 
     private void Start()
     {
-        //SetPlayerStats();
+        SetPlayerStats();
 
         animator = GetComponent<Animator>();
 
