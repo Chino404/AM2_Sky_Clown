@@ -12,4 +12,9 @@ public class CallJson : MonoBehaviour
     {
         instance = this;
     }
+
+    private void Start()
+    {
+        if(!save) save = GetComponent<JsonSaves>();
+    }
 }
