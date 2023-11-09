@@ -37,17 +37,17 @@ public class Player : MonoBehaviour, IObservableImpulse
 
     private void Awake()
     {
-        if(PlayerPrefs.HasKey("Energy") && PlayerPrefs.HasKey("PlayerName"))
-        {
-            _energy = PlayerPrefs.GetInt("Energy");
-            _playerName = PlayerPrefs.GetString("PlayerName");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Energy", _maxEnergy);
-            PlayerPrefs.SetString("PlayerName", _playerName);
-            PlayerPrefs.Save();
-        }
+        //if(PlayerPrefs.HasKey("Energy") && PlayerPrefs.HasKey("PlayerName"))
+        //{
+        //    _energy = PlayerPrefs.GetInt("Energy");
+        //    _playerName = PlayerPrefs.GetString("PlayerName");
+        //}
+        //else
+        //{
+        //    PlayerPrefs.SetInt("Energy", _maxEnergy);
+        //    PlayerPrefs.SetString("PlayerName", _playerName);
+        //    PlayerPrefs.Save();
+        //}
 
     }
 
