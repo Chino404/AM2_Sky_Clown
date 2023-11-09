@@ -9,6 +9,9 @@ public class MenuManager : MonoBehaviour
     public static bool tutorialCompleted;
     public Button playButton;
 
+    public Canvas menuCanvas;
+    public Canvas shopCanvas;
+
     private void Start()
     {
         if (!tutorialCompleted)
@@ -26,6 +29,18 @@ public class MenuManager : MonoBehaviour
 
         tutorialCompleted = true;
 
+    }
+
+    public void Shop()
+    {
+        menuCanvas.gameObject.SetActive(false);
+        shopCanvas.gameObject.SetActive(true);
+    }
+
+    public void BackToMenu()
+    {
+        menuCanvas.gameObject.SetActive(true);
+        shopCanvas.gameObject.SetActive(false);
     }
     
 
