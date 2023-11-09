@@ -6,7 +6,7 @@ using System.IO;
 public class JsonSaves : MonoBehaviour
 {
     [SerializeField] SaveData saveData = new SaveData();
-    string path = ""; //Es la barra que aparece arriba en los archivos, para buscarlos
+    string _path = ""; //Es la barra que aparece arriba en los archivos, para buscarlos
 
     private void Awake()
     {
@@ -19,9 +19,9 @@ public class JsonSaves : MonoBehaviour
         if (!Directory.Exists(customDir)) //Si no existe la creo
             Directory.CreateDirectory(customDir);
 
-        path = customDir + "/Saves.Json";
+        _path = customDir + "/Saves.Json";
 
-        Debug.Log(path);
+        Debug.Log(_path);
     }
 
     private void OnApplicationQuit()
@@ -36,29 +36,48 @@ public class JsonSaves : MonoBehaviour
         LoadJSON();
     }
 
+    void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            SaveJSON();
+        }
+        else if (Input.GetKeyDown(KeyCode.F9))
+        {
+            LoadJSON();
+        }
+    }
+
     public void SaveJSON()
     {
-        string json = JsonUtility.ToJson(saveData, true); //Hacemos un string en donde se va a crear el archivo de JSON y en los parametros le ponemos true para que me lo cree ordenado
+        if (File.Exists(_path))
+        {
+            Debug.LogWarning($"No existe ese camino para guardar");
 
-        File.WriteAllText(path, json); //Me crea un archivo JSON con los datos que estan en SaveData, me lo escribe
+            return;
+        }
+
+        string json = JsonUtility.ToJson(saveData, true); //Hacemos un string en donde se va a crear el archivo de JSON y en los parametros le ponemos true para que me lo cree ordenado
+        File.WriteAllText(_path, json); //Me crea un archivo JSON con los datos que estan en SaveData, me lo escribe
 
         Debug.Log(json);
     }
 
     public void LoadJSON()
     {
-        if (!File.Exists(path))
+        if (!File.Exists(_path))
         {
             Debug.LogWarning($"No hay archivo para cargar");
             return;
         }
 
-        string json = File.ReadAllText(path); //Me lee el archivo de esa ubicacion, es para acceder a archivos
+        string json = File.ReadAllText(_path); //Me lee el archivo de esa ubicacion, es para acceder a archivos
 
         if (json == null)
         {
             SaveJSON(); //Si no existe, creo uno
-            json = File.ReadAllText(path);
+            json = File.ReadAllText(_path);
         }
 
         JsonUtility.FromJsonOverwrite(json, saveData); //Sobrescribo los datos, le digo en donde esta (json) y le paso los datos (saveData)
@@ -67,7 +86,7 @@ public class JsonSaves : MonoBehaviour
     public void DeleteJSON()
     {
         Debug.Log("Se borro el save data");
-        File.Delete(path);
+        File.Delete(_path);
 
         //saveData = new SaveData();//Si quiero resetear los datos
     }
