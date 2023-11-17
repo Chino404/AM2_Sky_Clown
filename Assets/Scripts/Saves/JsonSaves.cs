@@ -39,11 +39,11 @@ public class JsonSaves : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.F5))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             SaveJSON();
         }
-        else if (Input.GetKeyDown(KeyCode.F9))
+        else if (Input.GetKeyDown(KeyCode.G))
         {
             LoadJSON();
         }
@@ -54,7 +54,6 @@ public class JsonSaves : MonoBehaviour
         if (File.Exists(_path))
         {
             Debug.LogWarning($"No existe ese camino para guardar");
-
             return;
         }
 
@@ -66,12 +65,12 @@ public class JsonSaves : MonoBehaviour
 
     public void LoadJSON()
     {
+
         if (!File.Exists(_path))
         {
             Debug.LogWarning($"No hay archivo para cargar");
             return;
         }
-
         string json = File.ReadAllText(_path); //Me lee el archivo de esa ubicacion, es para acceder a archivos
 
         if (json == null)

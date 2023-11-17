@@ -6,6 +6,7 @@ using UnityEngine;
 public class SaveData 
 {
     public int energy;
-    public float life;
-    public List<string> playersNames; 
+    public int life;
+    public bool tutorialCompleted;
+    //public List<string> playersNames; 
 }
