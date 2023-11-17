@@ -28,6 +28,8 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
 
         tutorialCompleted = true;
+        CallJson.instance.save.GetSaveData.tutorialCompleted = true;
+        CallJson.instance.save.SaveJSON();
 
     }
 
@@ -42,6 +44,5 @@ public class MenuManager : MonoBehaviour
         menuCanvas.gameObject.SetActive(true);
         shopCanvas.gameObject.SetActive(false);
     }
-    
 
 }

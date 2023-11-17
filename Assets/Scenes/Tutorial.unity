@@ -5344,7 +5344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1075964845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11239,7 +11239,7 @@ MonoBehaviour:
   _energy: 3
   _energyBar: {fileID: 0}
   _controller: {fileID: 1400933989}
-  _joystick: {fileID: 0}
+  _joystick: {fileID: 1400933989}
   _gravity: 2
   _speed: 5
   _jumpForceMode: 1
@@ -11250,6 +11250,7 @@ MonoBehaviour:
   _floorController: {fileID: 1877017861}
   _boxDim: {x: 0.9, y: 0.15}
   lastCheckPoint: {x: 0, y: 0}
+  _myRB: {fileID: 1890847187}
   _inFloor: 0
   _push: 0
 --- !u!50 &1890847187

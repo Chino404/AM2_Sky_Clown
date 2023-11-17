@@ -1375,8 +1375,10 @@ GameObject:
   m_Component:
   - component: {fileID: 973390727}
   - component: {fileID: 973390726}
+  - component: {fileID: 973390728}
+  - component: {fileID: 973390729}
   m_Layer: 0
-  m_Name: SaveData
+  m_Name: SaveDataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1412,6 +1414,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &973390728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973390725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405fe3c7b677c094188247cc12f237fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveData:
+    energy: 5
+    life: 3
+    tutorialCompleted: 0
+--- !u!114 &973390729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973390725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099c79bdd5a122d47b47f3b89cccc5ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  save: {fileID: 973390728}
 --- !u!1 &984742644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,9 +2277,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 973390726}
-        m_TargetAssemblyTypeName: SavePlayerPrefs, Assembly-CSharp
-        m_MethodName: DeleteAllDatas
+      - m_Target: {fileID: 973390728}
+        m_TargetAssemblyTypeName: JsonSaves, Assembly-CSharp
+        m_MethodName: DeleteJSON
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

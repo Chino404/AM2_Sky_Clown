@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, IObservableImpulse
 {
     [Header("Datos")]
-    [SerializeField] string _playerName = "";
+    //[SerializeField] string _playerName = "";
     public int life = 3;
     [SerializeField] int _energy = 3;
     private int _maxEnergy = 5;
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour, IObservableImpulse
     [Header("CheckPoint")]
     public Vector2 lastCheckPoint;
 
-    Rigidbody2D _myRB = default;
+    public Rigidbody2D _myRB = default;
     public bool _inFloor = default;
     public bool _push = default;
 
@@ -56,9 +56,9 @@ public class Player : MonoBehaviour, IObservableImpulse
         SetPlayerStats();
 
         animator = GetComponent<Animator>();
-
-        SavePlayerPrefs.instance.SaveVariables(_energy, _playerName);
         _myRB = GetComponent<Rigidbody2D>();
+
+        //SavePlayerPrefs.instance.SaveVariables(_energy, _playerName);
 
         if(_energyBar != null)
         {
@@ -73,22 +73,29 @@ public class Player : MonoBehaviour, IObservableImpulse
 
         Gravity();
         transform.position += _controller.GetMovementInput() * _speed * Time.deltaTime;
-        animator.SetFloat("Horizontal", Mathf.Abs( _joystick.MoveDirX()));
+
+        if(animator != null)
+            animator.SetFloat("Horizontal", Mathf.Abs( _joystick.MoveDirX()));
 
         _inFloor = Physics2D.OverlapBox(_floorController.position, _boxDim, 0f, _floor);
-        animator.SetBool("jumpy", _inFloor);
+        if(animator != null)
+            animator.SetBool("jumpy", _inFloor);
 
     }
 
     public void Damage()
     {
         life--;
+        CallJson.instance.save.GetSaveData.life = life;
         transform.position = lastCheckPoint;
         _myRB.AddForce(Vector2.up * 0);
         print("Daño");
 
         if (life <= 0)
+        {
             life = 0;
+            SubstracEnergy();
+        }
     }
 
     #region Energy
@@ -99,6 +106,7 @@ public class Player : MonoBehaviour, IObservableImpulse
         _energyBar.ChangeActualEnergy(_energy);
 
         BeatEnergyBar();
+        ChangedPlayerEnergy();
 
     }
 
@@ -170,25 +178,36 @@ public class Player : MonoBehaviour, IObservableImpulse
     public void SetPlayerStats()
     {
         if (!CallJson.instance.save) return;
-        _energy = CallJson.instance.save.GetSaveData.energy;
+        {
+            _energy = CallJson.instance.save.GetSaveData.energy;
+            life = CallJson.instance.save.GetSaveData.life;
+
+        }
+    }
+
+    public void ChangedPlayerEnergy()
+    {
+        CallJson.instance.save.GetSaveData.energy = _energy;
+        life = 3;
+        CallJson.instance.save.GetSaveData.life = life;
     }
 
     #region App
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt("Energy", _energy);
-        PlayerPrefs.SetString("PlayerName", _playerName);
-    }
+    //private void OnApplicationQuit()
+    //{
+    //    PlayerPrefs.SetInt("Energy", _energy);
+    //    PlayerPrefs.SetString("PlayerName", _playerName);
+    //}
 
-    public void OnApplicationPause(bool pause)
-    {
-        if (pause)
-        {
-            PlayerPrefs.Save();
-        }
+    //public void OnApplicationPause(bool pause)
+    //{
+    //    if (pause)
+    //    {
+    //        PlayerPrefs.Save();
+    //    }
 
-        else
-            SavePlayerPrefs.instance.LoadVariables();
-    }
+    //    else
+    //        SavePlayerPrefs.instance.LoadVariables();
+    //}
     #endregion
 }
