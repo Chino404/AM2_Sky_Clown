@@ -29,6 +29,16 @@ public class JsonSaves : MonoBehaviour
         SaveJSON();
     }
 
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            SaveJSON();
+        }
+    }
+
+
     private void Start()
     {
         CallJson.instance.save = this;
@@ -51,7 +61,7 @@ public class JsonSaves : MonoBehaviour
 
     public void SaveJSON()
     {
-        if (File.Exists(_path))
+        if (!File.Exists(_path))
         {
             Debug.LogWarning($"No existe ese camino para guardar");
             return;
@@ -65,13 +75,13 @@ public class JsonSaves : MonoBehaviour
 
     public void LoadJSON()
     {
+        string json = File.ReadAllText(_path); //Me lee el archivo de esa ubicacion, es para acceder a archivos
 
         if (!File.Exists(_path))
         {
             Debug.LogWarning($"No hay archivo para cargar");
             return;
         }
-        string json = File.ReadAllText(_path); //Me lee el archivo de esa ubicacion, es para acceder a archivos
 
         if (json == null)
         {

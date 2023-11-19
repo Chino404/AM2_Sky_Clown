@@ -1427,8 +1427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveData:
-    energy: 5
-    life: 3
+    energy: 3
+    life: 1
     tutorialCompleted: 0
 --- !u!114 &973390729
 MonoBehaviour:
@@ -1702,7 +1702,7 @@ MonoBehaviour:
   m_Content: {fileID: 1852528881}
   m_Horizontal: 1
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135

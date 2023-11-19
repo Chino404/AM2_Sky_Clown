@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public static bool tutorialCompleted;
+    //public bool tutorialCompleted;
     public Button playButton;
 
     public Canvas menuCanvas;
@@ -14,8 +14,11 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        if (!tutorialCompleted)
-        playButton.interactable=false;
+        print(CallJson.instance.save.GetSaveData.tutorialCompleted);
+        print(CallJson.instance.save.GetSaveData.energy);
+        print(CallJson.instance.save.GetSaveData.life);
+
+        StartCoroutine(LoadData());
     }
     public void PlayButton()
     {
@@ -27,7 +30,7 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(3);
         Time.timeScale = 1;
 
-        tutorialCompleted = true;
+        //tutorialCompleted = true;
         CallJson.instance.save.GetSaveData.tutorialCompleted = true;
         CallJson.instance.save.SaveJSON();
 
@@ -45,4 +48,10 @@ public class MenuManager : MonoBehaviour
         shopCanvas.gameObject.SetActive(false);
     }
 
+    private IEnumerator LoadData()
+    {
+        yield return new WaitForEndOfFrame();
+        print(CallJson.instance.save.GetSaveData.tutorialCompleted);
+        playButton.interactable = CallJson.instance.save.GetSaveData.tutorialCompleted;
+    }
 }
