@@ -14,11 +14,12 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        print(CallJson.instance.save.GetSaveData.tutorialCompleted);
-        print(CallJson.instance.save.GetSaveData.energy);
-        print(CallJson.instance.save.GetSaveData.life);
+        print(CallJson.instance.save.GetSaveData.tutorialCompletedJSON);
+        //print(CallJson.instance.save.GetSaveData.energy);
+        print(CallJson.instance.save.GetSaveData.lifeJSON);
 
         StartCoroutine(LoadData());
+        //LoadDataII();
     }
     public void PlayButton()
     {
@@ -31,7 +32,7 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
 
         //tutorialCompleted = true;
-        CallJson.instance.save.GetSaveData.tutorialCompleted = true;
+        CallJson.instance.save.GetSaveData.tutorialCompletedJSON = true;
         CallJson.instance.save.SaveJSON();
 
     }
@@ -51,7 +52,12 @@ public class MenuManager : MonoBehaviour
     private IEnumerator LoadData()
     {
         yield return new WaitForEndOfFrame();
-        print(CallJson.instance.save.GetSaveData.tutorialCompleted);
-        playButton.interactable = CallJson.instance.save.GetSaveData.tutorialCompleted;
+        print(CallJson.instance.save.GetSaveData.tutorialCompletedJSON);
+        playButton.interactable = CallJson.instance.save.GetSaveData.tutorialCompletedJSON;
+    }
+    private void LoadDataII()
+    {
+        print(CallJson.instance.save.GetSaveData.tutorialCompletedJSON);
+        playButton.interactable = CallJson.instance.save.GetSaveData.tutorialCompletedJSON;
     }
 }

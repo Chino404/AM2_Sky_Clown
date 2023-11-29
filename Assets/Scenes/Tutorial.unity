@@ -9548,7 +9548,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1890847186}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: Jump
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11234,10 +11234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8036f8fcff0d7364686a055f99c2c9e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerName: 
   life: 99
-  _energy: 3
-  _energyBar: {fileID: 0}
   _controller: {fileID: 1400933989}
   _joystick: {fileID: 1400933989}
   _gravity: 2

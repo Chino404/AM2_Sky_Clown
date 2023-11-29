@@ -44,6 +44,7 @@ public class JsonSaves : MonoBehaviour
         CallJson.instance.save = this;
 
         LoadJSON();
+        print("Cargó!!!!!!!!!!");
     }
 
     void Update()
@@ -61,41 +62,39 @@ public class JsonSaves : MonoBehaviour
 
     public void SaveJSON()
     {
-        if (!File.Exists(_path))
-        {
-            Debug.LogWarning($"No existe ese camino para guardar");
-            return;
-        }
+        string json = JsonUtility.ToJson(saveData, true); //Hacemos un string en donde se va a crear el archivo de JSON y en los parametros le ponemos true para que me lo cree ordenado.
+        File.WriteAllText(_path, json); //Me crea un archivo JSON con los datos que estan en SaveData, me lo escribe.
+        JSONCheck();
 
-        string json = JsonUtility.ToJson(saveData, true); //Hacemos un string en donde se va a crear el archivo de JSON y en los parametros le ponemos true para que me lo cree ordenado
-        File.WriteAllText(_path, json); //Me crea un archivo JSON con los datos que estan en SaveData, me lo escribe
 
         Debug.Log(json);
     }
 
     public void LoadJSON()
     {
-        string json = File.ReadAllText(_path); //Me lee el archivo de esa ubicacion, es para acceder a archivos
+        JSONCheck();
+        string json = File.ReadAllText(_path); //Me lee el archivo de esa ubicacion, es para acceder a archivos.
+        JsonUtility.FromJsonOverwrite(json, saveData); //Sobrescribo los datos, le digo en donde esta (json) y le paso los datos (saveData).
+    }
 
+    private void JSONCheck()
+    {
         if (!File.Exists(_path))
         {
-            Debug.LogWarning($"No hay archivo para cargar");
-            return;
-        }
+            Debug.LogWarning($"No existe ese camino para guardar/cargar.");
 
-        if (json == null)
-        {
-            SaveJSON(); //Si no existe, creo uno
-            json = File.ReadAllText(_path);
+            string json = JsonUtility.ToJson(saveData, true);
+            File.WriteAllText(_path, json); //Me crea un archivo JSON con los datos que estan en SaveData, me lo escribe.
         }
-
-        JsonUtility.FromJsonOverwrite(json, saveData); //Sobrescribo los datos, le digo en donde esta (json) y le paso los datos (saveData)
     }
 
     public void DeleteJSON()
     {
         Debug.Log("Se borro el save data");
         File.Delete(_path);
+
+        CallJson.instance.save.GetSaveData.tutorialCompletedJSON = false;
+        CallJson.instance.save.GetSaveData.moneyJSON = 0;
 
         //saveData = new SaveData();//Si quiero resetear los datos
     }
