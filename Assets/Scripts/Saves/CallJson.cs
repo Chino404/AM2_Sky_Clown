@@ -10,11 +10,15 @@ public class CallJson : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        //if (!instance)
+        {
+            instance = this;
+
+        }
     }
 
     private void Start()
     {
-        if(!save) save = GetComponent<JsonSaves>();
+        if (!save) save = GetComponent<JsonSaves>();
     }
 }

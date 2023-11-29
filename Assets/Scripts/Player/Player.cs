@@ -7,9 +7,10 @@ public class Player : MonoBehaviour, IObservableImpulse
     [Header("Datos")]
     //[SerializeField] string _playerName = "";
     public int life = 3;
-    [SerializeField] int _energy = 3;
-    private int _maxEnergy = 5;
-    [SerializeField] EnergyBar _energyBar;
+
+    //[SerializeField] int _energy = 3;
+    //private int _maxEnergy = 5;
+    //[SerializeField] EnergyBar _energyBar;
 
     [Header("Movimiento")]
     [Tooltip("Poner el Stick del Joystick")]
@@ -60,11 +61,11 @@ public class Player : MonoBehaviour, IObservableImpulse
 
         //SavePlayerPrefs.instance.SaveVariables(_energy, _playerName);
 
-        if(_energyBar != null)
-        {
-            _energyBar.ChangeMaxEnerfy(_maxEnergy);
-            _energyBar.ChangeActualEnergy(_energy);
-        }
+        //if(_energyBar != null)
+        //{
+        //    _energyBar.ChangeMaxEnerfy(_maxEnergy);
+        //    _energyBar.ChangeActualEnergy(_energy);
+        //}
 
     }
 
@@ -86,7 +87,7 @@ public class Player : MonoBehaviour, IObservableImpulse
     public void Damage()
     {
         life--;
-        CallJson.instance.save.GetSaveData.life = life;
+        CallJson.instance.save.GetSaveData.lifeJSON = life;
         transform.position = lastCheckPoint;
         _myRB.AddForce(Vector2.up * 0);
         print("Daño");
@@ -101,9 +102,8 @@ public class Player : MonoBehaviour, IObservableImpulse
     #region Energy
     public void SubstracEnergy()
     {
-        _energy--;
-
-        _energyBar.ChangeActualEnergy(_energy);
+        //_energy--;
+        //_energyBar.ChangeActualEnergy(_energy);
 
         BeatEnergyBar();
         ChangedPlayerEnergy();
@@ -112,8 +112,8 @@ public class Player : MonoBehaviour, IObservableImpulse
 
     public void BeatEnergyBar()
     {
-        if (_energy <= 0) _energy = 0;
-        else if (_energy >= _maxEnergy) _energy = _maxEnergy;
+        //if (_energy <= 0) _energy = 0;
+        //else if (_energy >= _maxEnergy) _energy = _maxEnergy;
     }
     #endregion
 
@@ -179,17 +179,17 @@ public class Player : MonoBehaviour, IObservableImpulse
     {
         if (!CallJson.instance.save) return;
         {
-            _energy = CallJson.instance.save.GetSaveData.energy;
-            life = CallJson.instance.save.GetSaveData.life;
+            //_energy = CallJson.instance.save.GetSaveData.energy;
+            life = CallJson.instance.save.GetSaveData.lifeJSON;
 
         }
     }
 
     public void ChangedPlayerEnergy()
     {
-        CallJson.instance.save.GetSaveData.energy = _energy;
+        //CallJson.instance.save.GetSaveData.energy = _energy;
         life = 3;
-        CallJson.instance.save.GetSaveData.life = life;
+        CallJson.instance.save.GetSaveData.lifeJSON = life;
     }
 
     #region App

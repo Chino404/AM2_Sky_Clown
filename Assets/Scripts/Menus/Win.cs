@@ -11,6 +11,10 @@ public class Win : MonoBehaviour
         {
             Time.timeScale = 0;
             winCanvas.SetActive(true);
+
+            CallJson.instance.save.GetSaveData.moneyJSON += 100;
+            CallJson.instance.save.SaveJSON();
+
         }
     }
 }

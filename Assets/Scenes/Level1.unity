@@ -3734,7 +3734,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4012,7 +4012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &352626846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4039,9 +4039,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveData:
-    energy: 5
-    life: 3
-    tutorialCompleted: 0
+    lifeJSON: 0
+    moneyJSON: 0
+    tutorialCompletedJSON: 0
 --- !u!114 &352626848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8294,7 +8294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &795282538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11093,9 +11093,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveData:
-    energy: 3
-    life: 1
-    tutorialCompleted: 0
+    lifeJSON: 0
+    moneyJSON: 0
+    tutorialCompletedJSON: 0
 --- !u!114 &1075964848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19483,8 +19483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 1
-  _energy: 0
-  _energyBar: {fileID: 795282540}
   _controller: {fileID: 1400933989}
   _joystick: {fileID: 1400933989}
   _gravity: 2
@@ -19555,7 +19553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890847185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.606, z: 0}
+  m_LocalPosition: {x: -3.07, y: 82.47, z: 0}
   m_LocalScale: {x: 0.083062686, y: 0.08263466, z: 0.080761}
   m_ConstrainProportionsScale: 0
   m_Children:
