@@ -9,12 +9,8 @@ public class ItemButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _itemName;
     [SerializeField] private TextMeshProUGUI _itemCost;
     [SerializeField] private Image _itemImage;
-
+    public bool bought = default;
     public  int cost;
-
-    private void Start()
-    {
-    }
 
     public void SetItem(Item myItem)
     {
@@ -28,9 +24,11 @@ public class ItemButton : MonoBehaviour
     {
         var money = CallJson.instance.save.GetSaveData.moneyJSON;
 
-        if(money >= cost)
+        if(money >= cost && !bought)
         {
             MoneyView.Instance.SubstracMoney(cost);
+            gameObject.GetComponent<Button>().enabled = false;
+            bought = true;
         }
     }
 }
