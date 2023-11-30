@@ -15,12 +15,6 @@ public class MoneyView : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        //money = CallJson.instance.save.GetSaveData.moneyJSON;
-        //textCost.text = "MONEY: " + money;
-    }
-
     private void Update()
     {
         money = CallJson.instance.save.GetSaveData.moneyJSON;

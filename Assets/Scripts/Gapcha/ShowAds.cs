@@ -42,12 +42,16 @@ public class ShowAds : MonoBehaviour, IUnityAdsListener
     {
         if (placementId == adID)
         {
-            if (showResult == ShowResult.Finished)
+            if (showResult == ShowResult.Finished) //Si lo miro completo
             {
+                CallJson.instance.save.GetSaveData.moneyJSON += 25;
+                CallJson.instance.save.SaveJSON();
                 Debug.Log("Max rewards");
             }
-            else if (showResult == ShowResult.Skipped)
+            else if (showResult == ShowResult.Skipped) //Si lo skipeo antes
             {
+                CallJson.instance.save.GetSaveData.moneyJSON += 10;
+                CallJson.instance.save.SaveJSON();
                 Debug.Log("Half rewards");
             }
             else

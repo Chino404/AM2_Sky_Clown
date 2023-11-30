@@ -152,6 +152,8 @@ MonoBehaviour:
   _itemName: {fileID: 3923936792849073133}
   _itemCost: {fileID: 8938702064798587572}
   _itemImage: {fileID: 8955056581990223289}
+  bought: 0
+  cost: 0
 --- !u!1 &6201593091704655877
 GameObject:
   m_ObjectHideFlags: 0

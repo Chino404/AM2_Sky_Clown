@@ -10,10 +10,15 @@ public class CallJson : MonoBehaviour
 
     private void Awake()
     {
-        //if (!instance)
+        if (!instance)
         {
             instance = this;
-
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
         }
     }
 

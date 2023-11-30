@@ -9,5 +9,6 @@ public class SaveData
     public int lifeJSON;
     public int moneyJSON;
     public bool tutorialCompletedJSON;
+
     //public List<string> playersNames; 
 }

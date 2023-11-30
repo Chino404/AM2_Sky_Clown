@@ -58,7 +58,7 @@ public class Player : MonoBehaviour, IObservableImpulse
 
         animator = GetComponent<Animator>();
         _myRB = GetComponent<Rigidbody2D>();
-
+        life = 3;
         //SavePlayerPrefs.instance.SaveVariables(_energy, _playerName);
 
         //if(_energyBar != null)
