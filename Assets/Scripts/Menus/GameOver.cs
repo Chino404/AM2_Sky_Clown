@@ -17,7 +17,9 @@ public class GameOver : MonoBehaviour
 
             //isGameOver = true;
         }
-        //if (isGameOver)
-        //    Time.timeScale = 0;
+       else
+        {
+            Time.timeScale = 1;
+        }
     }
 }
