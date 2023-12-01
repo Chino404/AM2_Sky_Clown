@@ -7,6 +7,10 @@ public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenu;
 
+    public void NextLvL()
+    {
+        SceneManager.LoadScene(4);
+    }
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
@@ -27,8 +31,9 @@ public class PauseManager : MonoBehaviour
     }
     public void RestartGame()
     {
-        Time.timeScale = 1;
         //GameOver.isGameOver = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+        
     }
 }
