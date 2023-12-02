@@ -95,7 +95,7 @@ public class Player : MonoBehaviour, IObservableImpulse
         if (life <= 0)
         {
             life = 0;
-            SubstracEnergy();
+            //SubstracEnergy();
         }
     }
 
