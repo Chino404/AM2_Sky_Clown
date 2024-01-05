@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] int _asyncScene;
     //public bool tutorialCompleted;
     public Button playButton;
 
@@ -21,15 +22,22 @@ public class MenuManager : MonoBehaviour
         StartCoroutine(LoadData());
         //LoadDataII();
     }
-    public void PlayButton()
+    public void ChangeToScene(int sceneNumber)
     {
-        SceneManager.LoadScene(2);
+        AsyncLoad._sceneNumber = sceneNumber;
+        SceneManager.LoadSceneAsync(_asyncScene);
         Time.timeScale = 1;
+
     }
+    //public void PlayButton()
+    //{
+    //    SceneManager.LoadSceneAsync(2);
+    //    Time.timeScale = 1;
+    //}
     public void TutorialLevel()
     {
-        SceneManager.LoadScene(3);
-        Time.timeScale = 1;
+        //SceneManager.LoadSceneAsync(4);
+        //Time.timeScale = 1;
 
         //tutorialCompleted = true;
         CallJson.instance.save.GetSaveData.tutorialCompletedJSON = true;
