@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IObservableImpulse
 {
-    void Subscribe(IObserverImpulse obs);
+    void Subscribe(IObserverBoost obs);
 
-    void Unsubscribe(IObserverImpulse obs);
+    void Unsubscribe(IObserverBoost obs);
 }
