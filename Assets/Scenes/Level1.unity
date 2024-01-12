@@ -4087,7 +4087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseMode: 1
   _renderer: {fileID: 0}
-  _force: 15
+  _force: 450
   _boostTime: 0.4
   _boostCooldown: 1
   _impulseEnabled: 0
@@ -4106,7 +4106,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.8
 --- !u!212 &406202499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6248,7 +6248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseMode: 1
   _renderer: {fileID: 0}
-  _force: 20
+  _force: 350
   _boostTime: 0.4
   _boostCooldown: 1
   _impulseEnabled: 0
@@ -6467,7 +6467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseMode: 1
   _renderer: {fileID: 0}
-  _force: 20
+  _force: 900
   _boostTime: 0.4
   _boostCooldown: 1
   _impulseEnabled: 0
@@ -8457,7 +8457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _impulseMode: 1
-  _force: 23
+  _force: 300
 --- !u!114 &818373683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10076,7 +10076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _impulseMode: 1
-  _force: 23
+  _force: 350
 --- !u!114 &957041959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11842,7 +11842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseMode: 1
   _renderer: {fileID: 0}
-  _force: 20
+  _force: 460
   _boostTime: 0.4
   _boostCooldown: 1
   _impulseEnabled: 0
@@ -11861,7 +11861,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.9
 --- !u!212 &1132627741
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12859,7 +12859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _impulseMode: 1
-  _force: 23
+  _force: 400
 --- !u!114 &1170236440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13200,7 +13200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _impulseMode: 1
-  _force: 23
+  _force: 250
 --- !u!114 &1174723856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16607,7 +16607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507979670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 83.91, z: 0}
+  m_LocalPosition: {x: 0.02, y: 85.29, z: 0}
   m_LocalScale: {x: 0.6190896, y: 0.6190896, z: 0.6190896}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17625,7 +17625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _impulseMode: 1
-  _force: 23
+  _force: 250
 --- !u!114 &1637179570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20281,11 +20281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8036f8fcff0d7364686a055f99c2c9e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
+  life: 3
   _controller: {fileID: 1400933989}
   _joystick: {fileID: 1400933989}
   _gravity: 4
-  _speed: 5
+  _speed: 7
   _jumpForce: 20
   _floorCheck: {fileID: 1877017861}
   _floorLayer:
@@ -20348,7 +20348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890847185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.119999886, y: -1.6099997, z: 0}
+  m_LocalPosition: {x: -0.02, y: -1.76, z: 0}
   m_LocalScale: {x: 0.083062686, y: 0.08263466, z: 0.080761}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23036,7 +23036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _impulseMode: 1
   _renderer: {fileID: 0}
-  _force: 15
+  _force: 400
   _boostTime: 0.4
   _boostCooldown: 1
   _impulseEnabled: 0
@@ -23055,7 +23055,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.9
 --- !u!212 &2080546589
 SpriteRenderer:
   m_ObjectHideFlags: 0

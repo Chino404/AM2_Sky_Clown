@@ -50,7 +50,8 @@ public class Player : MonoBehaviour, IObservableImpulse
     {
         _myRB.gravityScale = _gravity;
         life = 3;
-        SetPlayerStats();
+        //SetPlayerStats();
+        ChangedPlayerLife();
 
     }
 
@@ -85,7 +86,7 @@ public class Player : MonoBehaviour, IObservableImpulse
         if (life <= 0)
         {
             life = 0;
-            //SubstracEnergy();
+            //ChangedPlayerLife();
         }
     }
 
@@ -96,7 +97,7 @@ public class Player : MonoBehaviour, IObservableImpulse
         //_energyBar.ChangeActualEnergy(_energy);
 
         BeatEnergyBar();
-        ChangedPlayerEnergy();
+        ChangedPlayerLife();
 
     }
 
@@ -186,10 +187,10 @@ public class Player : MonoBehaviour, IObservableImpulse
         }
     }
 
-    public void ChangedPlayerEnergy()
+    public void ChangedPlayerLife()
     {
         //CallJson.instance.save.GetSaveData.energy = _energy;
-        life = 3;
+        life = 5;
         CallJson.instance.save.GetSaveData.lifeJSON = life;
     }
 
