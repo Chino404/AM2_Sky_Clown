@@ -120,7 +120,7 @@ public class Player : MonoBehaviour, IObservableImpulse
     #region Jump
     public void Jump()
     {
-
+        Debug.Log("salto");
         if (_boostReady) Boost();
 
         else if (_coyoteTimeCounter > 0f)
@@ -128,6 +128,7 @@ public class Player : MonoBehaviour, IObservableImpulse
             _coyoteTimeCounter = 0;
             _myRB.velocity = new Vector2(_myRB.velocity.x, _jumpForce);
         }
+        Debug.Log("he saltado");
     }
 
     public void Boost()
