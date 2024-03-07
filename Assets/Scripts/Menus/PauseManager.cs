@@ -6,10 +6,16 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenu;
+    [SerializeField] int _asyncScene;
 
-    public void NextLvL()
+
+    public void NextLvL(int scene)
     {
-        SceneManager.LoadScene(5);
+        //SceneManager.LoadScene(5);
+        AsyncLoad._sceneNumber = scene;
+
+        SceneManager.LoadSceneAsync(_asyncScene);
+
     }
     public void PauseGame()
     {
