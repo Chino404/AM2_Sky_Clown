@@ -10,16 +10,21 @@ public class GameOver : MonoBehaviour
 
     void Update()
     {
-        if(player.life<=0)
+        if (player != null)
         {
-            gameOverCanvas.SetActive(true);
-            Time.timeScale = 0;
+            if (player.life <= 0)
+            {
+                gameOverCanvas.SetActive(true);
+                Time.timeScale = 0;
 
-            //isGameOver = true;
+                //isGameOver = true;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
         }
-       else
-        {
-            Time.timeScale = 1;
-        }
+        else
+            Debug.LogWarning("FALTA EL PLAYER");
     }
 }

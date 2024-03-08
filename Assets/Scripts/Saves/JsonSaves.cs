@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class JsonSaves : MonoBehaviour
 {
@@ -90,7 +91,7 @@ public class JsonSaves : MonoBehaviour
 
     public void DeleteJSON()
     {
-        Debug.Log("Se borro el save data");
+        Debug.LogWarningFormat("Se borro el save data");
         File.Delete(_path);
 
         CallJson.instance.save.GetSaveData.tutorialCompletedJSON = false;
