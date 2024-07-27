@@ -29,21 +29,14 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
 
     }
-    //public void PlayButton()
+
+    //public void TutorialLevel()
     //{
-    //    SceneManager.LoadSceneAsync(2);
-    //    Time.timeScale = 1;
+    //    SceneManager.LoadSceneAsync(4);
+
+    //    CallJson.instance.save.GetSaveData.tutorialCompletedJSON = true;
+    //    CallJson.instance.save.SaveJSON();
     //}
-    public void TutorialLevel()
-    {
-        //SceneManager.LoadSceneAsync(4);
-        //Time.timeScale = 1;
-
-        //tutorialCompleted = true;
-        CallJson.instance.save.GetSaveData.tutorialCompletedJSON = true;
-        CallJson.instance.save.SaveJSON();
-
-    }
 
     public void Shop()
     {

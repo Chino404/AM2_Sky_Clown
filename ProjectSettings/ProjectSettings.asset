@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: ChineseCompany
   productName: Sky Clown
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -273,7 +273,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: e92527f6d0fe45342ab542b47346d45f, type: 3}
+      m_Icon: {fileID: 2800000, guid: 30dae949e91b80b43b3aef6ba1527380, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

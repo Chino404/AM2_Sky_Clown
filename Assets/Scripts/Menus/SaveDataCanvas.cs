@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveDataCanvas : MonoBehaviour
 {
@@ -14,8 +15,9 @@ public class SaveDataCanvas : MonoBehaviour
     IEnumerator ActivateCanvas()
     {
         yield return new WaitForSeconds(_seconds);
-        menuCanvas.SetActive(true);
+        //menuCanvas.SetActive(true);
         gameObject.SetActive(false);
+        SceneManager.LoadScene(1);
     }
 
     
