@@ -14,8 +14,10 @@ public class JsonSaves : MonoBehaviour
 
         //path = Application.persistentDataPath + "/SaveData"; //Basico y predeterminado
 
-        string customDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("\\", "/") + "/" + Application.companyName + "/"
-                + Application.productName + "/SaveData";//Mas pro, Customisiado
+        //string customDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("\\", "/") + "/" + Application.companyName + "/"
+        //        + Application.productName + "/SaveData";//Mas pro, Customisiado
+
+        string customDir = Application.persistentDataPath+ "/" + Application.companyName + "/" + Application.productName + "/SaveData";//Mas pro, Customisiado
 
         if (!Directory.Exists(customDir)) //Si no existe la creo
             Directory.CreateDirectory(customDir);
