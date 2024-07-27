@@ -22,7 +22,7 @@ public class JsonSaves : MonoBehaviour
 
         _path = customDir + "/Saves.Json";
 
-        Debug.Log(_path);
+        Debug.LogWarning(_path);
     }
 
     private void OnApplicationQuit()
@@ -92,10 +92,17 @@ public class JsonSaves : MonoBehaviour
     public void DeleteJSON()
     {
         Debug.LogWarningFormat("Se borro el save data");
-        File.Delete(_path);
 
-        CallJson.instance.save.GetSaveData.tutorialCompletedJSON = false;
-        CallJson.instance.save.GetSaveData.moneyJSON = 0;
+        if(File.Exists(_path))
+        {
+            File.Delete(_path);
+
+            CallJson.instance.save.GetSaveData.tutorialCompletedJSON = false;
+            CallJson.instance.save.GetSaveData.moneyJSON = 0;
+
+            SceneManager.LoadScene(1);
+        }
+
 
         //saveData = new SaveData();//Si quiero resetear los datos
     }
